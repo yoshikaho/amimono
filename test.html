@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>編み物記録</title>
+
+<style>
+/* 全体の余白とフォント感 */
+.yarn-form {
+  max-width: 520px;
+  margin: 24px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.yarn-form h2 {
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+/* フォームを縦並び */
+.yarn-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ラベルと入力を縦に */
+.yarn-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  gap: 6px;
+}
+
+/* 入力欄の見た目 */
+.yarn-form input,
+.yarn-form textarea {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* フォーカス時ちょっとだけアプリ感 */
+.yarn-form input:focus,
+.yarn-form textarea:focus {
+  outline: none;
+  border-color: #888;
+}
+
+/* 追加ボタン */
+.yarn-form button {
+  margin-top: 8px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #222;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.yarn-form button:hover {
+  opacity: 0.9;
+}
+
+</style>
+
+
+
+<section class="yarn-form">
+  <h2>毛糸を追加</h2>
+
+  <form>
+
+    <!-- 商品名（必須） -->
+    <label>
+      商品名 *
+      <input type="text" name="name" required>
+    </label>
+
+    <!-- メーカー -->
+    <label>
+      メーカー
+      <input type="text" name="brand">
+    </label>
+
+    <!-- 太さ -->
+    <label>
+      太さ
+      <input list="thicknessList" name="thickness">
+      <datalist id="thicknessList">
+        <option value="極細">
+        <option value="合細">
+        <option value="中細">
+        <option value="並太">
+        <option value="極太">
+        <option value="その他">
+      </datalist>
+    </label>
+
+    <!-- 長さ -->
+    <label>
+      長さ（m）
+      <input type="number" name="length">
+    </label>
+
+    <!-- 素材 -->
+    <label>
+      素材
+      <input type="text" name="material">
+    </label>
+
+    <!-- かぎ針サイズ -->
+    <label>
+      かぎ針サイズ
+      <input list="hookList" name="hookSize">
+      <datalist id="hookList">
+        <option value="2/0号">
+        <option value="3/0号">
+        <option value="4/0号">
+        <option value="5/0号">
+        <option value="6/0号">
+        <option value="その他">
+      </datalist>
+    </label>
+
+    <!-- 色 -->
+    <label>
+      色
+      <input type="text" name="color">
+    </label>
+
+    <!-- 購入場所 -->
+    <label>
+      購入場所
+      <input list="shopList" name="shop">
+      <datalist id="shopList">
+        <option value="100均">
+        <option value="ユザワヤ">
+        <option value="ネット">
+        <option value="その他">
+      </datalist>
+    </label>
+
+    <!-- メモ -->
+    <label>
+      メモ
+      <textarea name="memo"></textarea>
+    </label>
+
+    <!-- 写真 -->
+    <label>
+      写真
+      <input type="file" name="photo" accept="image/*">
+    </label>
+
+    <button type="submit">追加</button>
+
+  </form>
+</section>
+
+
+</body>
+</html>
